@@ -11,6 +11,7 @@
 * Updated `Document.elementFromPoint` binding to return a nullable value (#35)
 * Updated `MutationRecord` bindings `nextSibling`, `attributeName`, `attributeNamespace` and `oldValue` to return nullable values (#59)
 * Corrected spelling of `nextSibling` in `MutationRecord` (#59)
+* Updated `InputEvent.data` binding to return a nullable value (#90)
 
 ### Added (non-breaking)
 * `WebSocket` bindings (#34)
@@ -26,6 +27,7 @@
 * `WorkerGlobalScope`, `WindowOrWorkerGlobalScope`, `WorkerNavigator`, and `WorkerLocation` bindings (#57)
 * `Response` constructors to `Fetch` bindings (#64)
 * `HTMLFormControlsCollection`, `HTMLOptionsCollection`, `HTMLFieldSetElement`, `Document.forms`, `HTMLFormElement.elements`, `HTMLObjectElement`, `HTMLOptGroupElement`, `HTMLOptionElement`, `HTMLOutputElement`, `HTMLSelectElement`, `HTMLTextAreaElement`, and `RadioNodeList` bindings (#73)
+* `InputEvent` bindings for `inputType`, `dataTransfer` and `getTargetRanges` (#90)
 
 ### Fixed
 * `ofElement` was incorrectly returning `Dom.htmlElement` type instead of the enclosing element type (#60)
