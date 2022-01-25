@@ -2,6 +2,13 @@
 
 ### Breaking Changes
 * Change all `send.pipe` externals to `send`, making the whole project "t-first" (#8)
+  * Some `Node` APIs do not trigger compile errors due to the argument swap, because both arguments were `Node` instances. This logic error can cause severe migration headaches; the following methods had named arguments added to highlight places migration is necessary (#89)
+  * `appendChild`
+  * `compareDocumentPosition`
+  * `contains`
+  * `insertBefore`
+  * `removeChild`
+  * `replaceChild`
 * Imported `bs-fetch` as `Webapi.Fetch` and converted it to "t-first" (#31)
 * Removed deprecated APIs (#16)
 * Removed `preview` from File bindings. It doesn't seem to be in any specifications. (#56)
@@ -26,6 +33,7 @@
 * `WorkerGlobalScope`, `WindowOrWorkerGlobalScope`, `WorkerNavigator`, and `WorkerLocation` bindings (#57)
 * `Response` constructors to `Fetch` bindings (#64)
 * `HTMLFormControlsCollection`, `HTMLOptionsCollection`, `HTMLFieldSetElement`, `Document.forms`, `HTMLFormElement.elements`, `HTMLObjectElement`, `HTMLOptGroupElement`, `HTMLOptionElement`, `HTMLOutputElement`, `HTMLSelectElement`, `HTMLTextAreaElement`, and `RadioNodeList` bindings (#73)
+* `Node.insertAtEnd` binding (which does `insertBefore(child, null)`) (#89)
 
 ### Fixed
 * `ofElement` was incorrectly returning `Dom.htmlElement` type instead of the enclosing element type (#60)
@@ -33,3 +41,4 @@
 ### Miscellaneous
 * Converted project to rescript syntax (#18)
 * Added explicit values to all externals instead of using `= ""` (#40)
+* Deprecated `Node.isSameNode` (MDN recommends using `===` instead) (#89)
